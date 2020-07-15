@@ -12,7 +12,7 @@ let object = Solution();
 
 var rootNode : ListNode?;
 var currentNode : ListNode?;
-var sum = "0";
+var sum = "342";
 for index in 0..<sum.count {
     let indexStart = sum.index(sum.endIndex, offsetBy: -1 - index)
     let indexEnd = sum.index(sum.endIndex, offsetBy: -index)
@@ -25,7 +25,7 @@ for index in 0..<sum.count {
     currentNode = node;
 }
 
-sum = "0";
+sum = "465";
 var rootNode2 : ListNode?;
 for index in 0..<sum.count {
     let indexStart = sum.index(sum.endIndex, offsetBy: -1 - index)

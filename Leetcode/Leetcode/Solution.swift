@@ -35,33 +35,23 @@ class Solution {
     
     // 2. 两数相加
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        var l1Array = [Int]();
-        if var teamNode = l1 {
-            l1Array.append(teamNode.val);
-            while teamNode.next != nil {
-                teamNode = teamNode.next!;
-                l1Array.append(teamNode.val);
-            }
-        }
-        var l2Array = [Int]();
-        if var teamNode = l2 {
-            l2Array.append(teamNode.val);
-            while teamNode.next != nil {
-                teamNode = teamNode.next!;
-                l2Array.append(teamNode.val);
-            }
-        }
+        var node1 = l1;
+        var node2 = l2;
         var rootNode : ListNode?;
         var currentNode : ListNode?;
-        let maxLength = l1Array.count > l2Array.count ? l1Array.count : l2Array.count;
         var carry = false;
-        for index in 0...maxLength {
-            if (index == maxLength && !carry) {
-                break;
+        while node1 != nil || node2 != nil || carry {
+            var i = node1?.val
+            var j = node2?.val
+            node1 = node1?.next;
+            node2 = node2?.next;
+            if (i == nil) {
+                i = 0;
             }
-            let i = l1Array.count > index ? l1Array[index] : 0;
-            let j = l2Array.count > index ? l2Array[index] : 0;
-            var sum = i + j;
+            if (j == nil) {
+                j = 0;
+            }
+            var sum = i! + j!;
             if (carry) {
                 sum += 1;
                 carry = false;
