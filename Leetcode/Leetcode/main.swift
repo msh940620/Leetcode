@@ -39,6 +39,6 @@ for index in 0..<sum.count {
     currentNode = node;
 }
 
-var result = object.addTwoNumbers(rootNode, rootNode2);
+var result = object.twoSum([3,2,4], 6);
 
 print(result);

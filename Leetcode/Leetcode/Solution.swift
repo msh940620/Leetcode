@@ -33,6 +33,28 @@ class Solution {
         return array[n];
     }
     
+    // 1. 两数之和
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var result = [Int]();
+        var index0 = 0;
+        for value in nums {
+            if (index0 >= (nums.count - 1)) {
+                continue;
+            }
+            let searchTarget = target - value;
+            let index1 = index0 + 1;
+            for j in index1..<nums.count{
+                if(searchTarget == nums[j]){
+                    result.append(index0);
+                    result.append(j);
+                    return result;
+                }
+            }
+            index0 += 1;
+        }
+        return result;
+    }
+    
     // 2. 两数相加
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var node1 = l1;
